@@ -1,3 +1,19 @@
+
+# CharXiv
+📄[Paper](xxx)
+
+This repository contains the code to evaluate models on CharXiv from the paper [Chain of Functions: A Programmatic Pipeline for Fine-Grained Chart
+Reasoning Data](xxx).
+
+
+## Evaluation
+Here we present how to evaluate the model on ChartCoF dataset. Since there are different environments for models, you need to set up different environments accoding to the model you want to evaluate. Here we provide the example of evaluation code InternVL-2.5.8B. If you want to evaluate on your own model, you need to write customized function on `generate_lib`.
+
+## Installation
+
+Please follow the instructions in the [InternVL documentation](https://internvl.readthedocs.io/en/latest/get_started/installation.html) to install the required dependencies.
+
+
 # Project
 
 > This repo has been populated by an initial template to help get you started. Please
