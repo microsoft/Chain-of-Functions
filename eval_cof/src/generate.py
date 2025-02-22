@@ -17,12 +17,12 @@ if __name__ == '__main__':
     # Creating the parser
 
     parser = argparse.ArgumentParser(description='Process a directory path.')
-    parser.add_argument("--model_path", type=str, default="/home/v-zijianli/ml-dl/v-zijianli/models/ChartVLM-large")
-    parser.add_argument("--model_name", type=str, default="gemini")
+    parser.add_argument("--model_path", type=str, help="the path to the model", default="/home/v-zijianli/ml-dl/v-zijianli/models/InternVL2_5-8B")
+    parser.add_argument("--model_name", type=str, default="internvl25")
     parser.add_argument("--model_base", type=str, default=None)
-    parser.add_argument('--directory', type=str, help='The path to the directory', default='/home/v-zijianli/ml-dl/v-zijianli/data/data/ChartT/data/test_set')
-    parser.add_argument("--question_path", type=str, default="/home/v-zijianli/ml-dl/v-zijianli/data/data/ChartX/ChartX_annotation_test_QA.jsonl")
-    parser.add_argument("--answers_path", type=str, default="/home/v-zijianli/ml-dl/v-zijianli/chartagent_results/evaluate/gemini_15_flash_latest/cof_2_only_answer.jsonl")
+    parser.add_argument('--directory', type=str, help='The path to the directory', default='./')
+    parser.add_argument("--question_path", type=str, default="./chartcof.json")
+    parser.add_argument("--answers_path", type=str, default="./results/chartcof_internvl25_8b_only_answer.jsonl")
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--top_p", type=float, default=1.0)
     parser.add_argument("--num_beams", type=int, default=1)
