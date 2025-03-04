@@ -7,7 +7,7 @@ Reasoning Data](xxx).
 
 
 ## Evaluation
-Here we present how to evaluate the model on ChartCoF dataset. Since there are different environments for models, you need to set up different environments accoding to the model you want to evaluate. Here we provide the example of evaluation code InternVL-2.5.8B. If you want to evaluate on your own models, you need to write customized output functions on `eval_cof/src/generate_lib`.
+Here we present how to evaluate the model on ChartCoF dataset. Since there are different environments for models, you need to set up different environments accoding to the model you want to evaluate. Here we provide the example of evaluation code InternVL-2.5-8B. If you want to evaluate on your own models, you need to write customized output functions on `eval_cof/src/generate_lib`.
 
 ## Installation
 

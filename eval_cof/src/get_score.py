@@ -92,7 +92,7 @@ def evaluate_pred(pred, gt, task_type):
     else:
         raise ValueError(f'Invalid task type: {task_type}')
     
-def get_score(response_path, output_score_path, original_json_path='/home/v-zijianli/ml-dl/v-zijianli/data/data/ChartT/data/test_set/annotation_select_w_3path/select_samples_final.json'):
+def get_score(response_path, output_score_path, original_json_path='chartcof.json'):
     '''
     {"id": 0, "question": "How many unique quarters are represented in the chart displaying the manufacturing financial performance and expense breakdown for 2023, which includes Net Manufacturing Revenue (in dark red), Direct Production Costs (in light green), and Indirect Operational Costs (in purple)?", "answer": "4", "rationale": "The chart presents the financial performance and expense breakdown for manufacturing in each quarter of 2023, showing Net Manufacturing Revenue (in dark red), Direct Production Costs (in light green), and Indirect Operational Costs (in purple). For 2023, the quarters Q1, Q2, Q3, and Q4 are distinctly represented, each with associated financial metrics. Given this breakdown, the number of unique quarters represented in the chart is 4. Final answer: 4", "image_path": "image/3D-Bar/3D-Bar_13_3.png", "step_num": 2, "chart_type": "3D-Bar", "annotation": 0.0, "original_json_path": "/home/v-zijianli/ml-dl/v-zijianli/data/data/ChartT/data/json/2024-12-8-test/3D-Bar_self_instructed_unused_sampled_200/3D-Bar_13_3.json", "original_image_path": "/home/v-zijianli/ml-dl/v-zijianli/data/data/ChartT/data/image/2024-12-8/3D-Bar_self_instructed/3D-Bar_13_3.png", "original_rationale_path": "/home/v-zijianli/ml-dl/v-zijianli/data/data/ChartT/data/json/2024-12-8-test/3D-Bar_self_instructed_unused_sampled_200_rationale_nl_reanswer_1/3D-Bar_13_3_rationale.jsonl", "function_list": "all_object_selection/num_of_arguments/", "task_type": "NQA", "response": "4", "prompt": "<image>\nHow many unique quarters are represented in the chart displaying the manufacturing financial performance and expense breakdown for 2023, which includes Net Manufacturing Revenue (in dark red), Direct Production Costs (in light green), and Indirect Operational Costs (in purple)?\nAnswer the question using a single word or phrase."}
 
@@ -156,7 +156,7 @@ def get_score(response_path, output_score_path, original_json_path='/home/v-ziji
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--response_path', type=str, default='/home/v-zijianli/ml-dl/v-zijianli/chartagent_results/checkpoints/2025-1-23-internvl-ood/internvl25_8b_full_finetune_chartT_qra_step_num_4_lr_5e-6/evaluate/cof_2_cot.jsonl')
+    parser.add_argument('--response_path', type=str, help='Path to the response jsonl file', required=True)
     args = parser.parse_args()
 
     output_score_path = args.response_path.replace('.jsonl', '_score.jsonl')
