@@ -1,5 +1,5 @@
 fastapi
-gradio==3.35.2
+gradio==5.11.0
 gradio_client==0.2.9
 httpx==0.24.0
 markdown2[all]
