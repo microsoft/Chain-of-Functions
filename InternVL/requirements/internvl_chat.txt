@@ -23,5 +23,5 @@ tokenizers==0.15.1
 torch>=2
 torchvision>=0.15
 tqdm
-transformers==4.37.2
+transformers==4.48.0
 yacs
