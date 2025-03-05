@@ -1,6 +1,4 @@
 import sys
-sys.path.append('/home/v-zijianli/chartagent/')
-sys.path.append('/scratch/amlt_code/')
 from ChartVLM.tools.ChartVLM import infer_ChartVLM
 from tqdm import tqdm
 

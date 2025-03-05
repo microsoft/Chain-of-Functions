@@ -129,9 +129,9 @@ if __name__ == "__main__":
 
     query = "Is (0.6A, 75V) within this area?"
 
-    image_path = '/home/v-zijianli/chartagent/image.png'
+    image_path = './image.png'
 
-    model_path = '/home/v-zijianli/ml-dl/v-zijianli/models/Qwen2-VL-7B-Instruct'
+    model_path = './models/Qwen2-VL-7B-Instruct'
 
     print(main(model_path, query, image_path))
     

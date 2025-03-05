@@ -17,7 +17,7 @@ if __name__ == '__main__':
     # Creating the parser
 
     parser = argparse.ArgumentParser(description='Process a directory path.')
-    parser.add_argument("--model_path", type=str, help="the path to the model", default="/home/v-zijianli/ml-dl/v-zijianli/models/InternVL2_5-8B")
+    parser.add_argument("--model_path", type=str, help="the path to the model", required=True)
     parser.add_argument("--model_name", type=str, default="internvl25")
     parser.add_argument("--model_base", type=str, default=None)
     parser.add_argument('--directory', type=str, help='The path to the directory', default='./')

@@ -76,41 +76,8 @@ def generate_response(image_path, query, model_path, api_key=None):
 
 
 if __name__ == "__main__":
-    image_path = '/home/v-zijianli/chartagent/bar_43_3.png'
+    image_path = './bar_43_3.png'
     query = "What is in this image?"
     model_path = deployment_name
     response = generate_response(image_path, query, model_path)
     print(response)
-
-# image_path = '/home/v-zijianli/chartagent/bar_43_3.png'
-# base64_image = encode_image(image_path)
-
-# messages=[
-#         {
-#             "role": "user",
-#             "content": [
-#                 {
-#                     "type": "text",
-#                     "text": "What is in this image?",
-#                 },
-#                 {
-#                     "type": "image_url",
-#                     "image_url": {"url": f"data:image/jpeg;base64,{base64_image}"},
-#                 },
-#             ],
-#         }
-#     ]
-
-# # messages = [
-# #         {
-# #             "role": "user",
-# #             "content": "hello",
-# #         }
-# # ]
-
-# response = client.chat.completions.create(
-#     model=deployment_name,
-#     messages=messages
-# )
-# response_content = response.choices[0].message.content
-# print(response_content)

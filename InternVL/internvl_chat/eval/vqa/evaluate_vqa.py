@@ -223,7 +223,6 @@ class VQADataset(torch.utils.data.Dataset):
 
     def __init__(self, train, test, prompt, few_shot, input_size=224, dynamic_image_size=False,
                  use_thumbnail=False, max_num=6, root='data'):
-        # root = '/home/v-zijianli/ml-dl/v-zijianli/data'
         test = os.path.join(root, test)
         self.root = root
         self.test = open(test).readlines()

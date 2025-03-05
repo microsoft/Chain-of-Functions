@@ -17,7 +17,7 @@ def extract_answer(quries):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--response_path", type=str, default='/home/v-zijianli/ml-dl/v-zijianli/chartagent_results/results_cof/qwen2vl/cof_2_cot.jsonl')
+    parser.add_argument("--response_path", type=str, required=True)
 
     args = parser.parse_args()
 

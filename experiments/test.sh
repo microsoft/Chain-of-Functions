@@ -1,5 +1,5 @@
 python eval_cof/src/generate.py \
-    --model_path /home/v-zijianli/ml-dl/v-zijianli/models/InternVL2_5-8B \
+    --model_path PATH-TO-MODEL \
     --model_name internvl25 \
     --directory ./ \
     --question_path ./chartcof.json \

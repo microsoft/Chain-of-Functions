@@ -28,7 +28,7 @@ torchrun \
   --master_addr=127.0.0.1 \
   --nproc_per_node=${GPUS} \
   --master_port=${MASTER_PORT} \
-  /home/v-zijianli/chartagent/InternVL/internvl_chat/internvl/train/internvl_chat_finetune.py \
+  ./InternVL/internvl_chat/internvl/train/internvl_chat_finetune.py \
   --model_name_or_path "./pretrained/InternVL2-8B" \
   --conv_style "internlm2-chat" \
   --output_dir ${OUTPUT_DIR} \

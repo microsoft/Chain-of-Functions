@@ -146,7 +146,7 @@ def generate_response(question, response, api_key=None):
 
 
 if __name__ == "__main__":
-    image_path = '/home/v-zijianli/chartagent/bar_43_3.png'
+    image_path = './bar_43_3.png'
     question = "How many quarters are shown in the chart for the sales performance of the category represented by the dark blue color?"
     response = "The chart shows 7 quarters for the sales performance represented by the dark blue color."
     model_path = deployment_name
