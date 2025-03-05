@@ -62,6 +62,3 @@ tomli
 yapf==0.40.1
 plotly
 kaleido
-azure==4.0.0
-azure-identity
-openai
