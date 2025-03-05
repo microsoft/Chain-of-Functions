@@ -1,0 +1,11 @@
+python eval_cof/src/generate.py \
+    --model_path /home/v-zijianli/ml-dl/v-zijianli/models/InternVL2_5-8B \
+    --model_name internvl25 \
+    --directory ./ \
+    --question_path ./chartcof.json \
+    --answers_path ./results/chartcof_internvl25_8b_only_answer.jsonl \
+    --temperature 0.0 \
+    --top_p 1.0 \
+    --num_beams 1 \
+    --input_option only_answer \
+    --batch_size 1

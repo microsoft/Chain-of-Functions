@@ -11,6 +11,14 @@ Here we present how to evaluate the model on ChartCoF dataset. Since there are d
 
 ## Installation
 
+```
+conda create -n cof python=3.9
+conda activate cof
+cd InternVL/
+pip install -r requirements.txt
+pip install flash-attn==2.3.6 --no-build-isolation
+```
+
 Please follow the instructions in the [InternVL documentation](https://internvl.readthedocs.io/en/latest/get_started/installation.html) to install the required dependencies.
 
 ## Run
@@ -29,6 +37,35 @@ python src/evaluate.py \
     --input_option only_answer \
     --batch_size 1
 ```
+
+Evaluate the generated answer files.
+
+```
+python eval_cof/src/get_score.py \
+    --response_path results/chartcof_internvl25_8b_only_answer.jsonl
+```
+
+Optional: For those models with weak instruction-following capabilities we provide question extraction using GPT-4o.
+
+```
+python eval_cof/src/extract_answer.py \
+    --response_path results/chartcof_internvl25_8b_only_answer.jsonl
+```
+
+Compute the statistics for the models with respect to the question type, Annotation, and chart type.
+
+```
+python eval_cof/src/get_stat_basic.py \
+    --score_path results/chartcof_internvl25_8b_only_answer_score.jsonl
+```
+
+Compute the adavaned statistics for the models with respect to the Step Number, and Function Chains.
+
+```
+python eval_cof/src/get_stat.py \
+    --score_path results/chartcof_internvl25_8b_only_answer_score.jsonl
+```
+
 
 # Project
 

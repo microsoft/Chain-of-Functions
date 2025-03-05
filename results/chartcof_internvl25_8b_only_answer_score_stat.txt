@@ -1,0 +1,15 @@
+Task Type:
+NQA: Total 985, Accurate number 409, Accuracy 0.4152284263959391
+Binary: Total 238, Accurate number 182, Accuracy 0.7647058823529411
+Text: Total 228, Accurate number 99, Accuracy 0.4342105263157895
+===========================================================================
+Annotation:
+0.0: Total 695, Accurate number 262, Accuracy 0.376978417266187
+1.0: Total 756, Accurate number 428, Accuracy 0.5661375661375662
+===========================================================================
+Chart Type:
+EXTRA: Total 670, Accurate number 282, Accuracy 0.4208955223880597
+REG: Total 781, Accurate number 408, Accuracy 0.5224071702944942
+===========================================================================
+Overall:
+Total 1451, Accurate number 690, Accuracy 0.4755341144038594

@@ -1,0 +1,67 @@
+# -r requirements/internvl_chat.txt
+# -r requirements/streamlit_demo.txt
+# -r requirements/classification.txt
+# -r requirements/segmentation.txt
+
+
+accelerate
+bitsandbytes==0.41.0
+decord
+deepspeed==0.13.5
+einops==0.6.1
+einops-exts==0.0.4
+huggingface_hub
+imageio
+numpy
+ultralytics
+# opencv-python
+# python3-opencv
+# opencv-python-headless
+orjson
+peft>=0.4.0
+pycocoevalcap
+pyyaml
+scikit-learn>=1.2.2
+scipy
+sentencepiece==0.1.99
+shortuuid
+tensorboardX
+termcolor
+timm==0.9.12
+tokenizers==0.15.1
+# torch>=2
+# torchvision>=0.15
+tqdm
+transformers==4.37.2
+yacs
+
+fastapi
+gradio==3.35.2
+gradio_client==0.2.9
+httpx==0.24.0
+markdown2[all]
+pydantic
+requests
+streamlit
+streamlit-image-select
+uvicorn
+
+gdown
+termcolor
+yacs
+
+future
+importlib_metadata
+# mmcv-full==1.6.2
+mmsegmentation==0.30.0
+openmim
+ordered-set
+platformdirs
+tensorboard
+tomli
+yapf==0.40.1
+plotly
+kaleido
+azure==4.0.0
+azure-identity
+openai

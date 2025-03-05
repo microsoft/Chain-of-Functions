@@ -141,8 +141,8 @@ def get_score(response_path, output_score_path, original_json_path='chartcof.jso
 
         if score:
             correct += 1
-        else:
-            print('pred:', pred, 'gt:', gt)
+        # else:
+        #     print('pred:', pred, 'gt:', gt)
 
     assert len(score_list) == total
     accuracy = correct / total
