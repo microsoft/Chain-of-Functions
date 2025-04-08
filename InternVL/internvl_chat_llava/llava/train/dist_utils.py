@@ -14,8 +14,8 @@ def _find_free_port():
     # Copied from https://github.com/facebookresearch/detectron2/blob/main/detectron2/engine/launch.py # noqa: E501
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     # Binding to port 0 will cause the OS to find an available port for us
-    # sock.bind(('', 0))
-    sock.bind(('::1', 0))
+    sock.bind(('', 0))
+    # sock.bind(('::1', 0))
     port = sock.getsockname()[1]
     sock.close()
     # NOTE: there is still a chance the port could be taken by other processes.
