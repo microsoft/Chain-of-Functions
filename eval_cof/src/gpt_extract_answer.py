@@ -1,37 +1,12 @@
 from openai import AzureOpenAI
+from openai import OpenAI
 from azure.identity import DefaultAzureCredential, ChainedTokenCredential, AzureCliCredential, get_bearer_token_provider
 import re
 import os
 import base64
+import json
 
-scope = "api://trapi/.default"
-credential = get_bearer_token_provider(ChainedTokenCredential(
-    AzureCliCredential(),
-    DefaultAzureCredential(
-        exclude_cli_credential=True,
-        # Exclude other credentials we are not interested in.
-        exclude_environment_credential=True,
-        exclude_shared_token_cache_credential=True,
-        exclude_developer_cli_credential=True,
-        exclude_powershell_credential=True,
-        exclude_interactive_browser_credential=True,
-        exclude_visual_studio_code_credentials=True,
-        managed_identity_client_id=os.environ.get("DEFAULT_IDENTITY_CLIENT_ID"),
-    )
-),scope)
 
-api_version = '2024-10-21'  # Ensure this is a valid API version see: https://learn.microsoft.com/en-us/azure/ai-services/openai/api-version-deprecation#latest-ga-api-release
-model_name = 'gpt-4o'  # Ensure this is a valid model name
-model_version = '2024-05-13'  # Ensure this is a valid model version
-deployment_name = re.sub(r'[^a-zA-Z0-9-_]', '', f'{model_name}_{model_version}')  # If your Endpoint doesn't have harmonized deployment names, you can use the deployment name directly: see: https://aka.ms/trapi/models
-instance = 'gcr/shared' # See https://aka.ms/trapi/models for the instance name, remove /openai (library adds it implicitly) 
-endpoint = f'https://trapi.research.microsoft.com/{instance}'
-
-client = AzureOpenAI(
-    azure_endpoint=endpoint,
-    azure_ad_token_provider=credential,
-    api_version=api_version,
-)
 
 ### https://github.com/IDEA-FinAI/ChartBench/blob/main/Stat/gpt_filter.py
 SYSTEM_MESSAGE = """
@@ -118,24 +93,36 @@ def encode_image(image_path):
         return base64.b64encode(image_file.read()).decode("utf-8")
 
 def generate_response(question, response, api_key=None):
-    
+    curr_retries = 0
+    max_tokens = 256
+    max_retries = 10
+    while curr_retries < max_retries:
+        try:
+            client = OpenAI(api_key=os.getenv("OPENAI_KEY"))
+            response = client.chat.completions.create(
+                        messages=[
+                            {
+                                "role": "user",
+                                "content": USER_MESSAGE.format(question, response),
+                            }
+                        ],
+                        model="gpt-4o-2024-05-13",
+                        response_format={"type": "json_object"},
+                        n=1,
+                        max_tokens=1049,
+                        temperature=0,
+                        top_p=1,
+                        seed=42,
+                    ).choices[0].message.content
+            response_content = json.loads(response)
+        except Exception as e:
+            curr_retries += 1
+            if curr_retries >= max_retries:
+                print(f"Error: {e}")
+                return "FAILED"
+            continue
+        break
 
-    messages = [
-        {   
-            "role": "user",
-            "content": USER_MESSAGE.format(question, response)
-        }
-    ]
-
-    response = client.chat.completions.create(
-        model=deployment_name,
-        messages=messages,
-        max_tokens=500,
-        temperature=0.0,
-        top_p=1.0,
-        seed=42
-    )
-    response_content = response.choices[0].message.content
     return response_content
 
 

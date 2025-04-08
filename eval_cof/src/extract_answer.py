@@ -18,10 +18,12 @@ def extract_answer(quries):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--response_path", type=str, required=True)
+    parser.add_argument("--api_key", type=str, required=True)
 
     args = parser.parse_args()
 
     output_path = args.response_path.replace(".jsonl", "_extracted_answer.jsonl")
+    os.environ["OPENAI_KEY"] = args.api_key
 
     quries = []
     with open(args.response_path, "r") as f:
