@@ -12,7 +12,7 @@ timeout = timedelta(minutes=60)
 
 
 def _find_free_port():
-    # Copied from https://github.com/facebookresearch/detectron2/blob/main/detectron2/engine/launch.py # noqa: E501
+    # Copied from https://github.com/facebookresearch/detectron2/blob/main/detectron2/engine/launch.py # : E501
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     # Binding to port 0 will cause the OS to find an available port for us
     sock.bind(('', 0))

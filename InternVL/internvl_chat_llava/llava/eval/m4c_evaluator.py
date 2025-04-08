@@ -311,7 +311,7 @@ class TextCapsBleu4Evaluator:
         except ModuleNotFoundError:
             print(
                 "Please install pycocoevalcap module using "
-                "pip install git+https://github.com/ronghanghu/coco-caption.git@python23"  # noqa
+                "pip install git+https://github.com/ronghanghu/coco-caption.git@python23"  # 
             )
             raise
 

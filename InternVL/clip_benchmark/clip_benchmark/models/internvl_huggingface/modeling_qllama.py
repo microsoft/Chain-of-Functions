@@ -96,7 +96,7 @@ try:
 
     from apex.normalization import FusedRMSNorm
 
-    LlamaRMSNorm = partial(FusedRMSNorm, eps=1e-6)  # noqa
+    LlamaRMSNorm = partial(FusedRMSNorm, eps=1e-6) 
     print('Discovered apex.normalization.FusedRMSNorm - will use it instead of LlamaRMSNorm')
 except ImportError:
     # using the normal LlamaRMSNorm

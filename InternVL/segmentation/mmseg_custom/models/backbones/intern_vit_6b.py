@@ -79,7 +79,7 @@ class RMSNorm(nn.Module):
 try:
     from apex.normalization import FusedRMSNorm
 
-    RMSNorm = FusedRMSNorm  # noqa
+    RMSNorm = FusedRMSNorm  # 
 
     print('Discovered apex.normalization.FusedRMSNorm - will use it instead of RMSNorm')
 except ImportError:

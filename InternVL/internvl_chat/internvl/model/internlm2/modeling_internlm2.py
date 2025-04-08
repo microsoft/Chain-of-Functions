@@ -37,7 +37,7 @@ from transformers.utils import (add_start_docstrings,
 
 try:
     from transformers.generation.streamers import BaseStreamer
-except:  # noqa # pylint: disable=bare-except
+except:  #  # pylint: disable=bare-except
     BaseStreamer = None
 
 from .configuration_internlm2 import InternLM2Config
@@ -147,7 +147,7 @@ try:
     from functools import partial
 
     from apex.normalization import FusedRMSNorm
-    InternLM2RMSNorm = partial(FusedRMSNorm, eps=1e-6)   # noqa
+    InternLM2RMSNorm = partial(FusedRMSNorm, eps=1e-6)   # 
     print('Discovered apex.normalization.FusedRMSNorm - will use it instead of InternLM2RMSNorm')
 except ImportError:
     # using the normal LlamaRMSNorm

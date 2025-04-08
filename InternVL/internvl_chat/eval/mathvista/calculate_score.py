@@ -88,7 +88,7 @@ def get_acc_with_contion(res_pd, key, value):
     else:
         total_pd = res_pd[res_pd[key] == value]
 
-    correct_pd = total_pd[total_pd['true_false'] == True] # noqa: E712
+    correct_pd = total_pd[total_pd['true_false'] == True] # : E712
     acc = '{:.2f}'.format(len(correct_pd) / len(total_pd) * 100)
     return len(correct_pd), len(total_pd), acc
 

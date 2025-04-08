@@ -46,7 +46,7 @@ class InternRMSNorm(nn.Module):
 try:
     from apex.normalization import FusedRMSNorm
 
-    InternRMSNorm = FusedRMSNorm  # noqa
+    InternRMSNorm = FusedRMSNorm  # 
 
     logger.info('Discovered apex.normalization.FusedRMSNorm - will use it instead of InternRMSNorm')
 except ImportError:
