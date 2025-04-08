@@ -16,12 +16,6 @@ credential = get_bearer_token_provider(ChainedTokenCredential(
         exclude_powershell_credential=True,
         exclude_interactive_browser_credential=True,
         exclude_visual_studio_code_credentials=True,
-        # DEFAULT_IDENTITY_CLIENT_ID is a variable exposed in
-        # Azure ML Compute jobs that has the client id of the
-        # user-assigned managed identity in it.
-        # See https://learn.microsoft.com/en-us/azure/machine-learning/how-to-identity-based-service-authentication#compute-cluster
-        # In case it is not set the ManagedIdentityCredential will
-        # default to using the system-assigned managed identity, if any.
         managed_identity_client_id=os.environ.get("DEFAULT_IDENTITY_CLIENT_ID"),
     )
 ),scope)
