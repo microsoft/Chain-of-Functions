@@ -51,7 +51,8 @@ Optional: For those models with weak instruction-following capabilities we provi
 
 ```
 python eval_cof/src/extract_answer.py \
-    --response_path results/chartcof_internvl25_8b_only_answer.jsonl
+    --response_path results/chartcof_internvl25_8b_only_answer.jsonl \
+    --api_key <your_openai_api_key> \
 ```
 
 Compute the statistics for the models with respect to the question type, Annotation, and chart type.
