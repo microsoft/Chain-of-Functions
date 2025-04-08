@@ -65,7 +65,7 @@ def load_upload_file_and_show():
         with upload_image_preview.container():
             Library(images)
 
-        image_hashes = [hashlib.md5(image.tobytes()).hexdigest() for image in images]
+        image_hashes = [hashlib.sha256(image.tobytes()).hexdigest() for image in images]
         for image, hash in zip(images, image_hashes):
             t = datetime.datetime.now()
             filename = os.path.join(LOGDIR, 'serve_images', f'{t.year}-{t.month:02d}-{t.day:02d}', f'{hash}.jpg')

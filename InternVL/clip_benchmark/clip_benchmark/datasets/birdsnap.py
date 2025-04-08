@@ -45,7 +45,7 @@ class Birdsnap(torch.utils.data.Dataset):
         """This only checks if all files are there."""
         try:
             with open(os.path.join(self.root, self.METADATA_ARCHIVE), 'rb') as f:
-                archive_hash = hashlib.md5()
+                archive_hash = hashlib.sha256()
                 while chunk := f.read(chunk_size):
                     archive_hash.update(chunk)
             return self.META_MD5 == archive_hash.hexdigest()
@@ -128,7 +128,7 @@ class Birdsnap(torch.utils.data.Dataset):
         try:
             # Do this if you want to check in detail:
             with open(os.path.join(self.root, self.BASE_FOLDER, self.meta[idx]['path']), 'rb') as fin:
-                return (hashlib.md5(fin.read()).hexdigest() == self.meta[idx]['md5'])
+                return (hashlib.sha256(fin.read()).hexdigest() == self.meta[idx]['sha256'])
             # In the mean time, just check if everything is there:
             # return os.path.exists(os.path.join(self.root, self.BASE_FOLDER, self.meta[idx]["path"]))
         except FileNotFoundError:

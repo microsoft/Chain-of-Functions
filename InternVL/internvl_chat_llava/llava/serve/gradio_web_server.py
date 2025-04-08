@@ -243,7 +243,7 @@ def http_bot(state, model_selector, temperature, top_p, max_new_tokens, max_inpu
     prompt = state.get_prompt()
 
     all_images = state.get_images(return_pil=True)
-    all_image_hash = [hashlib.md5(image.tobytes()).hexdigest() for image in all_images]
+    all_image_hash = [hashlib.sha256(image.tobytes()).hexdigest() for image in all_images]
     for image, hash in zip(all_images, all_image_hash):
         t = datetime.datetime.now()
         filename = os.path.join(LOGDIR, "serve_images", f"{t.year}-{t.month:02d}-{t.day:02d}", f"{hash}.jpg")
