@@ -15,7 +15,6 @@ For easier implementation, we have cloned the code from [InternVL](https://githu
 ```
 conda create -n cof python=3.9
 conda activate cof
-cd InternVL/
 pip install -r requirements.txt
 pip install flash-attn==2.3.6 --no-build-isolation
 pip install azure==4.0.0 azure-identity openai
