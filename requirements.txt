@@ -36,7 +36,7 @@ transformers==4.48.2
 yacs
 
 fastapi
-gradio==5.22.0
+gradio==5.23.0
 gradio_client==0.2.9
 httpx==0.24.0
 markdown2[all]
