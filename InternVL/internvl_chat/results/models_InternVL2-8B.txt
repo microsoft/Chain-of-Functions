@@ -1,2 +1,0 @@
-['chartqa_test_human', {'relaxed_accuracy': 0.728}]
-['chartqa_test_augmented', {'relaxed_accuracy': 0.9368}]
