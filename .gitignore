@@ -403,3 +403,4 @@ FodyWeavers.xsd
 eval_cof/src/generate_lib/gpt4o_ms.py
 eval_cof/src/generate_lib/gpt4v_ms.py
 eval_cof/src/gpt_extract_answer_azure.py
+InternVL
