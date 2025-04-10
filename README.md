@@ -10,7 +10,7 @@ Reasoning Data](xxx).
 Here we present how to evaluate the model on ChartCoF dataset. Since there are different environments for models, you need to set up different environments accoding to the model you want to evaluate. Here we provide the example of evaluation code InternVL-2.5-8B. If you want to evaluate on your own models, you need to write customized output functions on `eval_cof/src/generate_lib`.
 
 ## Installation
-For easier implementation, we have cloned the code from [InternVL](https://github.com/OpenGVLab/InternVL). You can also follow the instructions in the [InternVL documentation](https://internvl.readthedocs.io/en/latest/get_started/installation.html) to install the required dependencies.
+To run the code for InternVL-2.5-8B, you need to first clone the [InternVL repository](https://github.com/OpenGVLab/InternVL#) and install the dependencies.
 
 ```
 conda create -n cof python=3.9
